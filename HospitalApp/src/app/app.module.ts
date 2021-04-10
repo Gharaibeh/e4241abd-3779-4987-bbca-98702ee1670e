@@ -19,7 +19,11 @@ export const routerConfig: Routes = [
 ];
 @NgModule({
   declarations: [AppComponent, UserComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot(routerConfig),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
