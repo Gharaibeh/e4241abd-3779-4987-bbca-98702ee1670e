@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
+import { HospitalsService } from './hospitals.service';
+import { HttpClientModule } from '@angular/common/http';
 
 export const routerConfig: Routes = [
   {
@@ -22,9 +24,10 @@ export const routerConfig: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot(routerConfig),
   ],
-  providers: [],
+  providers: [HospitalsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
