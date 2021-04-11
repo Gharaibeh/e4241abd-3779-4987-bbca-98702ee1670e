@@ -39,7 +39,7 @@ export class HospitalsService {
         console.log(data);
       });*/
 
-    return this.httpClient.get(`${this.apiURL}/hospitals`, {
+    return this.httpClient.get(`${this.apiURL}/hospitals?limit=10&page=0`, {
       observe: 'response',
     });
   }

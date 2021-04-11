@@ -15,11 +15,12 @@ interface Hospital {
 export class UserComponent implements OnInit {
   title = 'List of users';
   hospitals;
-  hosiptalHTTP: any;
+  hosiptalHTTP: Hospital[];
+
   constructor(private service: HospitalsService) {
     this.hospitals = service.getHospitals();
 
-    // console.log(service.PrintResult());
+    this.hosiptalHTTP = [];
   }
 
   ngOnInit() {
@@ -34,7 +35,14 @@ export class UserComponent implements OnInit {
         console.log(data['body']['page']);
         //  console.log();
         for (const element of data['body']['_embedded']['hospitals']) {
-          console.log(element.name);
+          this.hosiptalHTTP.push({
+            name: element.name,
+            location: element.location['lat'] + element.location['lng'],
+            id: element.id,
+            waitingList: element.waitingList,
+          });
+          console.log(element['name']);
+          // this.hosiptalHTTP.push(element['name']);
         }
         /* const ll = JSON.stringify(data);
         for (const element of ll) {
