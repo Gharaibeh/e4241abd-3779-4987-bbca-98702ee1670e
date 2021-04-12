@@ -41,6 +41,7 @@ export class HospitalsService {
 
     return this.httpClient.get(`${this.apiURL}/hospitals?limit=10&page=0`, {
       observe: 'response',
+      responseType: 'json',
     });
   }
 }

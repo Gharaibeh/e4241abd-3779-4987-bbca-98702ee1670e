@@ -30,9 +30,11 @@ export class UserComponent implements OnInit {
   getFoods() {
     this.service.PrintResult().subscribe(
       (data: any) => {
+        console.log('1-------------');
         console.log(data);
         // this.hosiptalHTTP = data;
         console.log(data['body']['page']);
+        console.log(data['body']['_links']['next']);
         //  console.log();
         for (const element of data['body']['_embedded']['hospitals']) {
           this.hosiptalHTTP.push({

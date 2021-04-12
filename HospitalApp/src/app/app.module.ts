@@ -8,6 +8,9 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { HospitalsService } from './hospitals.service';
 import { HttpClientModule } from '@angular/common/http';
+import { IllnessComponent } from './illness/illness.component';
+import { HospitalComponent } from './hospital/hospital.component';
+import { MapComponent } from './map/map.component';
 
 export const routerConfig: Routes = [
   {
@@ -20,7 +23,14 @@ export const routerConfig: Routes = [
   },
 ];
 @NgModule({
-  declarations: [AppComponent, UserComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    UserComponent,
+    HomeComponent,
+    IllnessComponent,
+    HospitalComponent,
+    MapComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
