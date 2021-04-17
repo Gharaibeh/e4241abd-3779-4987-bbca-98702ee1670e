@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy":"gh-pages -d dist"
+    "deploy":"gh-pages -d build"
   },
   "private": true,
   "homepage": "https://gharaibeh.github.io/e4241abd-3779-4987-bbca-98702ee1670e/",
