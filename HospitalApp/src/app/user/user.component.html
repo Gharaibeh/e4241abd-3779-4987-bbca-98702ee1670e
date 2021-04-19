@@ -1,9 +1,20 @@
-<h2>{{ title }}</h2>
-<ul>
-  <li *ngFor="let hospital of hospitals">
-    {{ hospital }}
-  </li>
-  <li *ngFor="let hospital1 of hosiptalHTTP">
-    {{ hospital1.name }} {{ hospital1.location }}
-  </li>
-</ul>
+<div *ngFor="let hospital of hosiptalHTTP">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div class="circle" [ngStyle]="{ 'background-color': circleColor }">
+        <img *ngIf="!showInitials" src="{{ photoUrl }}" />
+
+        <div *ngIf="showInitials" class="initials">
+          {{ initials }}
+        </div>
+      </div>
+      <mat-card-title>{{ hospital.name }} </mat-card-title>
+      <mat-card-subtitle>{{ hospital.location }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

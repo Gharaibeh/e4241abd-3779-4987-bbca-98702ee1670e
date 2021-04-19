@@ -8,10 +8,30 @@ import { Router } from '@angular/router';
 })
 export class IllnessComponent implements OnInit {
   navLinks: string[] = [];
+  config: any;
 
-  constructor(private router: Router) {}
+  collection = { count: 60, data: [] };
+
+  constructor(private router: Router) {
+    /* for (let i = 0; i < this.collection.count; i++) {
+      this.collection.data.push({
+        id: i + 1,
+        text: 'Collection value' + (i + 1),
+      });
+    }
+    this.config = {
+      id: 'basicPaginate',
+      itemsPerPage: 5,
+      currentPage: 1,
+      totalItems: this.collection.count,
+    };*/
+  }
 
   ngOnInit(): void {
     this.navLinks.push('./level');
+  }
+
+  pageChanged(event: any) {
+    this.config.currentPage = event;
   }
 }

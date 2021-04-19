@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +32,7 @@ export const routerConfig: Routes = [
       },
     ],
   },
-  { path: 'hospital', component: HospitalComponent },
+  { path: 'hospital', component: UserComponent },
   { path: '*', component: HomeComponent },
   {
     path: '**',
@@ -53,6 +54,7 @@ export const routerConfig: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatCardModule,
     RouterModule.forRoot(routerConfig),
   ],
   providers: [HospitalsService],
